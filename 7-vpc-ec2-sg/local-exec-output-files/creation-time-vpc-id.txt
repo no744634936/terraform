@@ -1,0 +1,2 @@
+VPC created on 2022年 10月 2日 日曜日 19時55分51秒 CST and VPC ID: vpc-0a4e6062fb8c755ba
+VPC created on 2022年 11月21日 月曜日 11時39分35秒 CST and VPC ID: vpc-00937447d01573813
