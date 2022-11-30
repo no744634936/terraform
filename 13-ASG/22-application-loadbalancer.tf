@@ -7,6 +7,7 @@ module "alb" {
     load_balancer_type = "application"
     vpc_id = module.vpc.vpc_id
     # 两个public subnets 里面都要有loadbalancer
+    # 也可以写成  subnets = module.vpc.public_subnets,
     subnets = [
         module.vpc.public_subnets[0],
         module.vpc.public_subnets[1]
