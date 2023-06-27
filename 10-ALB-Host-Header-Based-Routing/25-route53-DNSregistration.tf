@@ -3,7 +3,7 @@
 resource "aws_route53_record" "default_dns" {
   zone_id = data.aws_route53_zone.mydomain.zone_id 
   name    = "myapps.zhang1123.link"   //也可以是www.zhang1123.link
-  type    = "A"
+  type    = "A"                         //A record 是别名的意思，www.zhang1123.link就相当于一个Load Balancer DNS的别名。
   alias {
     name                   = module.alb.lb_dns_name
     zone_id                = module.alb.lb_zone_id

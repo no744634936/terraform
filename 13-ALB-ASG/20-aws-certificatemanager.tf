@@ -15,7 +15,7 @@ module "acm" {
   tags = local.common_tags 
 }
 
-# 打印一下，Output ACM Certificate ARN
+# 打印一下，Output ACM Certificate ARN，这个应该https的证书编号
 output "acm_certificate_arn" {
   description = "ACM Certificate ARN"
   value = module.acm.acm_certificate_arn

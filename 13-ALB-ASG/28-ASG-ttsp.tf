@@ -1,5 +1,6 @@
 ###### Target Tracking Scaling Policies ######
 # TTS - Scaling Policy-1: Based on CPU Utilization
+# ASGAverageCPUUtilizationを利用し、Auto Scaling グループの平均 CPU 使用率が50%となるように スケーリングする
 # Define Autoscaling Policies and Associate them to Autoscaling Group
 resource "aws_autoscaling_policy" "avg_cpu_policy_greater_than_xx" {
   name                   = "avg-cpu-policy-greater-than-xx"
@@ -17,6 +18,7 @@ resource "aws_autoscaling_policy" "avg_cpu_policy_greater_than_xx" {
 }
 
 # TTS - Scaling Policy-2: Based on ALB Target Requests
+# ターゲットあたりの Application Load Balancer の平均リクエスト数。
 resource "aws_autoscaling_policy" "alb_target_requests_greater_than_yy" {
   name                   = "alb-target-requests-greater-than-yy"
   policy_type = "TargetTrackingScaling" # Important Note: The policy type, either "SimpleScaling", "StepScaling" or "TargetTrackingScaling". If this value isn't provided, AWS will default to "SimpleScaling."    
